@@ -30,7 +30,11 @@ public class AnamneseController {
 		return ResponseEntity.ok(service.getAllAnamnese());
 	}
 	
+<<<<<<< HEAD
 	@GetMapping(value = "/{id_anamnese}")
+=======
+	@GetMapping(value = "/{id}")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 	public ResponseEntity<Anamnese> getByIdAnamnese(@PathVariable Long id_anamnese){
 		Optional<Anamnese> anamnese =service.getByIdAnamnese(id_anamnese);
 		return anamnese.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
@@ -41,7 +45,11 @@ public class AnamneseController {
 		return ResponseEntity.ok(service.saveAnamnese(ananmnese));
 	}
 	
+<<<<<<< HEAD
 	@PutMapping(value = "/{id_anamnese}")
+=======
+	@PutMapping(value = "/{id}")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 	public ResponseEntity<String> updateAnamnese(@PathVariable Long id_anamnese , @RequestBody Anamnese updateAnamnese){
 		Optional<Anamnese> existingAnamnese = service.getByIdAnamnese(id_anamnese);
 		if(existingAnamnese.isPresent()) {
@@ -51,7 +59,11 @@ public class AnamneseController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+<<<<<<< HEAD
 		@DeleteMapping(value = "/{id_anamnese}")
+=======
+		@DeleteMapping(value = "/{id}")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 		public ResponseEntity<Void> deleteAnamnese(@PathVariable Long id_anamnese){
 			if(service.getByIdAnamnese(id_anamnese).isPresent()) {
 				service.deleteAnamnese(id_anamnese);
@@ -61,25 +73,41 @@ public class AnamneseController {
 			}
 		}
 		
+<<<<<<< HEAD
 		@PutMapping(value = "/{id_anamnese}/lesao")
+=======
+		@PutMapping(value = "/{id}/lesao")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 		public ResponseEntity<Anamnese> perguntaTem_lesao(@PathVariable Long id_anamnese , @RequestParam boolean tem_lesao , @RequestParam(required = false) String detalhe_lesao){
 			Anamnese anamnese = service.perguntaTemLesao(id_anamnese, tem_lesao, detalhe_lesao);
 			return ResponseEntity.ok(anamnese);
 		}
 		
+<<<<<<< HEAD
 		@PutMapping(value = "/{id_anamnese}/cirurgia")
+=======
+		@PutMapping(value = "/{id}/cirurgia")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 		public ResponseEntity<Anamnese> perguntaCirurgia(@PathVariable Long id_anamnese , @RequestParam boolean cirurgia , @RequestParam(required = false) String detalhe_cirurgia){
 			Anamnese anamnese = service.perguntaTemCirurgia(id_anamnese, cirurgia, detalhe_cirurgia);
 			return ResponseEntity.ok(anamnese);
 		}
 		
+<<<<<<< HEAD
 		@PutMapping(value = "/{id_anamnese}/alimentacao")
+=======
+		@PutMapping(value = "/{id}/alimentacao")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 		public ResponseEntity<Anamnese> perguntaAlimentacao(@PathVariable Long id_anamnese , @RequestParam boolean dieta , @RequestParam boolean orientacao_nutricional , @RequestParam(required = false) String detalhe_dieta){
 			Anamnese anamnese =service.perguntaAlimentacao(id_anamnese, dieta, orientacao_nutricional, detalhe_dieta);
 			return ResponseEntity.ok(anamnese);
 		}
 		
+<<<<<<< HEAD
 		@PutMapping(value = "/{id_anamnese}/ergogenico")
+=======
+		@PutMapping(value = "/{id}/ergogenico")
+>>>>>>> f7448bf770d6517477b932dbc68b648b9b897fde
 		public ResponseEntity<Anamnese> perguntaErgogenico(@PathVariable Long id_anamnese , @RequestParam boolean uso_ergogenico , @RequestParam(required = false) String detalhe_ergogenico){
 			Anamnese anamnese = service.perguntaErgogenico(id_anamnese, uso_ergogenico, detalhe_ergogenico);
 			return ResponseEntity.ok(anamnese);
